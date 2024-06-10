@@ -240,7 +240,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_bfw75")
 }],
 "loop": true,
-"name": &"attack-backwards",
+"name": &"attack_backwards",
 "speed": 5.0
 }, {
 "frames": [{
@@ -257,7 +257,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_qi5n8")
 }],
 "loop": true,
-"name": &"attack-sideways",
+"name": &"attack_sideways",
 "speed": 5.0
 }, {
 "frames": [{
@@ -317,7 +317,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_wgfb8")
 }],
 "loop": true,
-"name": &"idle-backwards",
+"name": &"idle_backwards",
 "speed": 5.0
 }, {
 "frames": [{
@@ -340,7 +340,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_mau7h")
 }],
 "loop": true,
-"name": &"idle-sideways",
+"name": &"idle_sideways",
 "speed": 5.0
 }, {
 "frames": [{
@@ -386,7 +386,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_wf8ek")
 }],
 "loop": true,
-"name": &"walk-backwards",
+"name": &"walk_backwards",
 "speed": 5.0
 }, {
 "frames": [{
@@ -409,7 +409,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_rliol")
 }],
 "loop": true,
-"name": &"walk-sideways",
+"name": &"walk_sideways",
 "speed": 5.0
 }]
 
@@ -422,9 +422,9 @@ script = ExtResource("1_vv52o")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_3kg3c")
-animation = &"idle"
+animation = &"attack_backwards"
 autoplay = "idle"
-frame_progress = 0.922715
+frame_progress = 0.633778
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 10)
