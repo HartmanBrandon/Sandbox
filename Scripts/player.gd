@@ -1,39 +1,31 @@
 extends CharacterBody2D
 
-var speed = 100
+var speed = 50
 var current_direction = "none"
-
-@onready var animated_sprite = $AnimatedSprite2D
 
 
 func _physics_process(delta):
-	player_movement(delta)
+	get_input(delta)
+	move_and_slide()
 
-func player_movement(delta):
-	if Input.is_action_pressed("move_right"):
+func get_input(delta):
+	var input_direction = Input.get_vector("left", "right", "up", "down")
+	velocity = input_direction * speed
+	
+	if Input.is_action_pressed("right"):
 		current_direction = "right"
 		play_animation(1)
-		velocity.x = speed
-		velocity.y = 0
-	elif Input.is_action_pressed("move_left"):
+	elif Input.is_action_pressed("left"):
 		current_direction = "left"
 		play_animation(1)
-		velocity.x = -speed
-		velocity.y = 0
-	elif Input.is_action_pressed("move_down"):
+	elif Input.is_action_pressed("down"):
 		current_direction = "down"
 		play_animation(1)
-		velocity.y = speed
-		velocity.x = 0
-	elif Input.is_action_pressed("move_up"):
+	elif Input.is_action_pressed("up"):
 		current_direction = "up"
 		play_animation(1)
-		velocity.y = -speed
-		velocity.x = 0
 	else:
 		play_animation(0)
-		velocity.x = 0
-		velocity.y = 0
 	
 	move_and_slide()
 
